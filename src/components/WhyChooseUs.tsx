@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Check, HeartPulse, Activity, Star } from 'lucide-react';
 import { CLINIC_VALUES } from '../data/clinicData';
+import { CLINIC_IMAGES, handleImageError } from '../assets/images';
 
 interface WhyChooseUsProps {
   onOpenBooking: () => void;
@@ -58,13 +59,13 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ onOpenBooking }) => {
               {CLINIC_VALUES.map((val) => {
                 const isActive = val.id === activeValueId;
                 const valueImages: Record<string, string> = {
-                  compassion: '/assets/images/about_doctor_portrait_1790248368496.jpg',
-                  collaboration: '/assets/images/care_team_scrubs_1790248388964.jpg',
-                  transparency: '/assets/images/doctor_consultation_family_1790248379120.jpg',
-                  flexibility: '/assets/images/hero_care_family_1790248293775.jpg',
-                  excellence: '/assets/images/about_doctor_portrait_1790248368496.jpg',
+                  compassion: CLINIC_IMAGES.doctorPortrait,
+                  collaboration: CLINIC_IMAGES.careTeam,
+                  transparency: CLINIC_IMAGES.doctorConsultation,
+                  flexibility: CLINIC_IMAGES.hero,
+                  excellence: CLINIC_IMAGES.doctorPortrait,
                 };
-                const previewImg = valueImages[val.id] || '/assets/images/about_doctor_portrait_1790248368496.jpg';
+                const previewImg = valueImages[val.id] || CLINIC_IMAGES.doctorPortrait;
 
                 return (
                   <button
@@ -89,6 +90,7 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ onOpenBooking }) => {
                             src={previewImg}
                             alt={`${val.name} preview`}
                             className="w-full h-full object-cover transition-transform duration-300"
+                            onError={(e) => handleImageError(e, 'doctorPortrait')}
                             referrerPolicy="no-referrer"
                           />
                         </div>
@@ -149,9 +151,10 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ onOpenBooking }) => {
           {/* Animated Image Wrapper with Breathing Zoom and Smooth Hover Physics */}
           <div className="absolute inset-0 w-full h-full overflow-hidden">
             <img
-              src="/assets/images/doctor_consultation_family_1790248379120.jpg"
+              src={CLINIC_IMAGES.doctorConsultation}
               alt="Compassionate physician consultation with young mother and child"
               className="w-full h-full object-cover object-center animate-breathe-zoom group-hover/photo-card:scale-110 group-hover/photo-card:contrast-[1.04] transition-all duration-700 ease-out"
+              onError={(e) => handleImageError(e, 'doctorConsultation')}
               referrerPolicy="no-referrer"
             />
             {/* Subtle Gradient Vignette Overlays */}

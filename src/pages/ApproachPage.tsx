@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { PageHeader } from '../components/PageHeader';
 import { TOTAL_CARE_STEPS } from '../data/clinicData';
 import { Play, CheckCircle2, ShieldCheck, Smartphone, Clock, ArrowRight, Activity, Users, Sparkles, X } from 'lucide-react';
+import { CLINIC_IMAGES, handleImageError } from '../assets/images';
 
 interface ApproachPageProps {
   onNavigateHome: () => void;
@@ -63,9 +64,10 @@ export const ApproachPage: React.FC<ApproachPageProps> = ({
         {/* Video Hero Spotlight */}
         <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-slate-900 border-4 border-white aspect-[16/9] sm:aspect-[21/9] flex items-center justify-center text-center p-6 group">
           <img
-            src="/assets/images/hero_care_family_1790248293775.jpg"
+            src={CLINIC_IMAGES.hero}
             alt="MedixWeb clinical family care"
             className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700"
+            onError={(e) => handleImageError(e, 'hero')}
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-slate-900/40" />

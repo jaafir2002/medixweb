@@ -1,5 +1,6 @@
 import React from 'react';
 import { Play } from 'lucide-react';
+import { CLINIC_IMAGES, handleImageError } from '../assets/images';
 
 interface ApproachProps {
   onOpenVideo: () => void;
@@ -30,9 +31,10 @@ export const Approach: React.FC<ApproachProps> = ({ onOpenVideo }) => {
         
         {/* Medical care team image */}
         <img
-          src="/assets/images/care_team_scrubs_1790248388964.jpg"
+          src={CLINIC_IMAGES.careTeam}
           alt="MedixWeb surgical and medical team providing compassionate patient care"
           className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+          onError={(e) => handleImageError(e, 'careTeam')}
           referrerPolicy="no-referrer"
         />
 

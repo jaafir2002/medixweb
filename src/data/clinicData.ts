@@ -1,3 +1,5 @@
+import { CLINIC_IMAGES } from '../assets/images';
+
 export interface Doctor {
   id: string;
   name: string;
@@ -54,7 +56,7 @@ export const DOCTORS: Doctor[] = [
     education: 'Johns Hopkins School of Medicine',
     rating: 4.9,
     reviewsCount: 312,
-    avatar: '/assets/images/about_doctor_portrait_1790248368496.jpg',
+    avatar: CLINIC_IMAGES.doctorPortrait,
     availableNext: 'Today, 3:15 PM',
     location: 'Building A, Suite 402',
     bio: 'Specializing in non-invasive preventive cardiology, coronary artery disease management, and advanced cardiac ultrasound diagnostics.'
@@ -68,7 +70,7 @@ export const DOCTORS: Doctor[] = [
     education: 'Stanford University School of Medicine',
     rating: 4.9,
     reviewsCount: 428,
-    avatar: '/assets/images/doctor_consultation_family_1790248379120.jpg',
+    avatar: CLINIC_IMAGES.doctorConsultation,
     availableNext: 'Tomorrow, 9:30 AM',
     location: 'Building B, Suite 105',
     bio: 'Dedicated to comprehensive lifetime wellness, preventive screenings, chronic illness management, and multi-generational family health.'
@@ -82,7 +84,7 @@ export const DOCTORS: Doctor[] = [
     education: 'UCSF School of Medicine',
     rating: 5.0,
     reviewsCount: 284,
-    avatar: '/assets/images/testimonial_cody_fisher_1790248399526.jpg',
+    avatar: CLINIC_IMAGES.testimonialPatient,
     availableNext: 'Today, 4:45 PM',
     location: 'Pediatric Wing, 2nd Floor',
     bio: 'Focuses on infant development, childhood immunity, gentle pediatric vaccinations, and compassionate adolescent healthcare.'
@@ -96,7 +98,7 @@ export const DOCTORS: Doctor[] = [
     education: 'Harvard Medical School',
     rating: 4.8,
     reviewsCount: 196,
-    avatar: '/assets/images/care_team_scrubs_1790248388964.jpg',
+    avatar: CLINIC_IMAGES.careTeam,
     availableNext: 'Friday, 10:00 AM',
     location: 'Surgical Center, 3rd Floor',
     bio: 'Pioneer in minimally invasive joint preservation, sports injury rehabilitation, and rapid recovery arthroscopic procedures.'
@@ -175,7 +177,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Jan 25, 2026',
     readTime: '4 min read',
     author: 'Dr. Sarah Chen, FACC',
-    image: '/assets/images/hero_care_family_1790248293775.jpg',
+    image: CLINIC_IMAGES.hero,
     content: [
       'Cardiovascular wellness is built not in emergency rooms, but through the calm, consistent daily choices we cultivate. Decades of clinical cardiology evidence underscore that modest lifestyle adaptations yield dramatic dividends in arterial elasticity and cardiac performance.',
       '1. Mindful 30-Minute Aerobic Cadence: Brisk walking, light cycling, or swimming at a conversational pace reduces systolic blood pressure by an average of 4-9 mm Hg.',
@@ -193,7 +195,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Jan 25, 2026',
     readTime: '5 min read',
     author: 'Dr. Marcus Vance, MD',
-    image: '/assets/images/doctor_consultation_family_1790248379120.jpg',
+    image: CLINIC_IMAGES.doctorConsultation,
     content: [
       'A common misconception is that a physician visit is only warranted in the presence of acute symptoms. In modern clinical practice, however, early asymptomatic interception is our most potent medical advantage.',
       'Hypertension, prediabetes, subtle thyroid sluggishness, and early lipid imbalances routinely manifest without subjective pain. An annual 45-minute clinical evaluation establishes your personal physiological baseline.',
@@ -209,7 +211,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Jan 25, 2026',
     readTime: '6 min read',
     author: 'Dr. Elena Rodriguez, MD',
-    image: '/assets/images/care_team_scrubs_1790248388964.jpg',
+    image: CLINIC_IMAGES.careTeam,
     content: [
       'The boundary between emotional strain and systemic physiology is non-existent. When emotional stress lingers unresolved, the hypothalamic-pituitary-adrenal (HPA) axis maintains a sustained flood of epinephrine and cortisol.',
       'This chronic neuroendocrine cascade impairs gastric mucosal integrity, disrupts microbiome balance, impairs insulin sensitivity, and stimulates low-grade arterial inflammation.',
@@ -349,7 +351,7 @@ export const TESTIMONIALS_LIST = [
     rating: 5,
     title: 'Transformed my cardiac health and peace of mind',
     quote: 'The team at MedixWeb made every step stress-free and supportive. Dr. Chen took the time to explain my echocardiogram in plain language and designed an exercise and medication plan that got my blood pressure back to normal within six weeks. I feel 15 years younger.',
-    avatar: '/assets/images/testimonial_cody_fisher_1790248399526.jpg',
+    avatar: CLINIC_IMAGES.testimonialPatient,
     duration: 'Patient for 2 years',
     location: 'Downtown Clinic'
   },
@@ -361,7 +363,7 @@ export const TESTIMONIALS_LIST = [
     rating: 5,
     title: 'Friendly staff and prompt diagnostic turnaround',
     quote: 'The team made every step stress-free and supportive. I finally feel confident about my treatment and ongoing health plan. My blood work was delivered to my phone with doctor commentary by 4 PM on the very same day.',
-    avatar: '/assets/images/about_doctor_portrait_1790248368496.jpg',
+    avatar: CLINIC_IMAGES.doctorPortrait,
     duration: 'Patient for 4 years',
     location: 'Westside Center'
   },
@@ -373,7 +375,7 @@ export const TESTIMONIALS_LIST = [
     rating: 5,
     title: 'Seamless experience from initial consult to full recovery',
     quote: 'After injuring my meniscus during weekend soccer, Dr. Pendelton walked me through non-surgical therapy first before proceeding with arthroscopy. The physical therapy staff next door made my rehab smooth and painless.',
-    avatar: '/assets/images/doctor_consultation_family_1790248379120.jpg',
+    avatar: CLINIC_IMAGES.doctorConsultation,
     duration: 'Patient for 1 year',
     location: 'Uptown Suites'
   },
@@ -385,7 +387,7 @@ export const TESTIMONIALS_LIST = [
     rating: 5,
     title: 'Compassionate pediatric care that puts new parents at ease',
     quote: 'As first-time parents, we had a hundred questions about our baby girl. Dr. Elena Rodriguez was patient, gentle, and warm. The separate well-child waiting room gave us immense comfort.',
-    avatar: '/assets/images/hero_care_family_1790248293775.jpg',
+    avatar: CLINIC_IMAGES.hero,
     duration: 'Patient for 10 months',
     location: 'Uptown Pediatric Wing'
   },
@@ -397,7 +399,7 @@ export const TESTIMONIALS_LIST = [
     rating: 5,
     title: 'Walked in on a Saturday and was treated within 20 minutes',
     quote: 'I woke up on a Saturday morning with acute chest congestion. I was able to walk into the Westside location without an appointment, receive an ultrasound and digital X-ray, and pick up my prescription in under an hour.',
-    avatar: '/assets/images/care_team_scrubs_1790248388964.jpg',
+    avatar: CLINIC_IMAGES.careTeam,
     duration: 'Patient for 3 years',
     location: 'Westside Family Care'
   }

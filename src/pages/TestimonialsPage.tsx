@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { PageHeader } from '../components/PageHeader';
 import { TESTIMONIALS_LIST } from '../data/clinicData';
 import { Star, Quote, CheckCircle, ThumbsUp, MessageSquare, ShieldCheck, Heart, Send } from 'lucide-react';
+import { handleImageError } from '../assets/images';
 
 interface TestimonialsPageProps {
   onNavigateHome: () => void;
@@ -147,6 +148,7 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({
                   src={item.avatar}
                   alt={item.patientName}
                   className="w-10 h-10 rounded-full object-cover border border-slate-200 shrink-0"
+                  onError={(e) => handleImageError(e, 'testimonialPatient')}
                   referrerPolicy="no-referrer"
                 />
                 <div className="text-xs">

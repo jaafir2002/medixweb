@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Heart, Shield, Award, Users, CheckCircle2 } from 'lucide-react';
+import { CLINIC_IMAGES, handleImageError } from '../assets/images';
 
 export const AboutUs: React.FC = () => {
   const [impactIndex, setImpactIndex] = useState(0);
@@ -53,9 +54,10 @@ export const AboutUs: React.FC = () => {
             {/* Portrait Frame */}
             <div className="relative rounded-3xl overflow-hidden border-4 border-white shadow-xl bg-slate-100 aspect-square">
               <img
-                src="/assets/images/about_doctor_portrait_1790248368496.jpg"
+                src={CLINIC_IMAGES.doctorPortrait}
                 alt="Lead clinical physician at MedixWeb"
                 className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
+                onError={(e) => handleImageError(e, 'doctorPortrait')}
                 referrerPolicy="no-referrer"
               />
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent p-4 text-white">

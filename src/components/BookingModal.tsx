@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, Calendar, Clock, User, Phone, Mail, Shield, CheckCircle2, ChevronRight, AlertCircle } from 'lucide-react';
 import { DOCTORS, Doctor, CLINIC_SERVICES, ServiceItem, INSURANCE_PROVIDERS } from '../data/clinicData';
+import { handleImageError } from '../assets/images';
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -252,7 +253,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                           >
                             <div className="flex items-center gap-3">
                               <div className="w-12 h-12 rounded-xl overflow-hidden bg-slate-100 shrink-0">
-                                <img src={doc.avatar} alt={doc.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                                <img
+                                  src={doc.avatar}
+                                  alt={doc.name}
+                                  className="w-full h-full object-cover"
+                                  onError={(e) => handleImageError(e, 'doctorPortrait')}
+                                  referrerPolicy="no-referrer"
+                                />
                               </div>
                               <div>
                                 <h4 className="font-display font-bold text-sm text-slate-900">{doc.name}</h4>

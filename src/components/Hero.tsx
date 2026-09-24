@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Check, X, ShieldCheck, Heart, Sparkles } from 'lucide-react';
+import { CLINIC_IMAGES, handleImageError } from '../assets/images';
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -60,20 +61,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreServices }) 
                 <div className="flex -space-x-2 overflow-hidden py-0.5">
                   <img
                     className="inline-block h-6 w-6 rounded-full ring-2 ring-white/90 object-cover transform transition-transform duration-300 hover:scale-125 hover:z-20 hover:ring-sky-300"
-                    src="/assets/images/about_doctor_portrait_1790248368496.jpg"
-                    alt="Clinic patient"
+                    src={CLINIC_IMAGES.doctorPortrait}
+                    alt="Clinic specialist"
+                    onError={(e) => handleImageError(e, 'doctorPortrait')}
                     referrerPolicy="no-referrer"
                   />
                   <img
                     className="inline-block h-6 w-6 rounded-full ring-2 ring-white/90 object-cover transform transition-transform duration-300 hover:scale-125 hover:z-20 hover:ring-sky-300"
-                    src="/assets/images/testimonial_cody_fisher_1790248399526.jpg"
+                    src={CLINIC_IMAGES.testimonialPatient}
                     alt="Clinic patient"
+                    onError={(e) => handleImageError(e, 'testimonialPatient')}
                     referrerPolicy="no-referrer"
                   />
                   <img
                     className="inline-block h-6 w-6 rounded-full ring-2 ring-white/90 object-cover transform transition-transform duration-300 hover:scale-125 hover:z-20 hover:ring-sky-300"
-                    src="/assets/images/doctor_consultation_family_1790248379120.jpg"
-                    alt="Clinic patient"
+                    src={CLINIC_IMAGES.doctorConsultation}
+                    alt="Doctor consultation"
+                    onError={(e) => handleImageError(e, 'doctorConsultation')}
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -135,9 +139,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreServices }) 
             {/* Center-Right Hero Photo with organic curve mask */}
             <div className="relative w-full h-[360px] sm:h-[420px] lg:h-full min-h-[380px] rounded-2xl lg:rounded-3xl overflow-hidden shadow-lg border border-white/20 group">
               <img
-                src="/assets/images/hero_care_family_1790248293775.jpg"
+                src={CLINIC_IMAGES.hero}
                 alt="Father and child receiving joyful compassionate care at MedixWeb Clinic"
                 className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                onError={(e) => handleImageError(e, 'hero')}
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />

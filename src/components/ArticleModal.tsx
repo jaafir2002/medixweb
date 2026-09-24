@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { X, Calendar, Clock, User, ArrowRight, Bookmark } from 'lucide-react';
 import { BlogPost } from '../data/clinicData';
+import { handleImageError } from '../assets/images';
 
 interface ArticleModalProps {
   post: BlogPost | null;
@@ -49,6 +50,7 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({ post, onClose, onOpe
               src={post.image}
               alt={post.title}
               className="w-full h-full object-cover object-center"
+              onError={(e) => handleImageError(e, 'doctorConsultation')}
               referrerPolicy="no-referrer"
             />
           </div>

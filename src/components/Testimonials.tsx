@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Quote } from 'lucide-react';
+import { CLINIC_IMAGES, handleImageError } from '../assets/images';
 
 export const Testimonials: React.FC = () => {
   const [activeCard, setActiveCard] = useState<number>(1); // Cody Fisher as active center card
@@ -48,9 +49,10 @@ export const Testimonials: React.FC = () => {
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full overflow-hidden border border-slate-200 bg-slate-100">
                 <img
-                  src="/assets/images/about_doctor_portrait_1790248368496.jpg"
+                  src={CLINIC_IMAGES.doctorPortrait}
                   alt="Robert Fox"
                   className="w-full h-full object-cover"
+                  onError={(e) => handleImageError(e, 'doctorPortrait')}
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -80,9 +82,10 @@ export const Testimonials: React.FC = () => {
         >
           <div className="h-[360px] sm:h-[400px] w-full relative">
             <img
-              src="/assets/images/testimonial_cody_fisher_1790248399526.jpg"
+              src={CLINIC_IMAGES.testimonialPatient}
               alt="Cody Fisher smiling after successful treatment"
               className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              onError={(e) => handleImageError(e, 'testimonialPatient')}
               referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent pointer-events-none" />
@@ -126,9 +129,10 @@ export const Testimonials: React.FC = () => {
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full overflow-hidden border border-slate-200 bg-slate-100">
                 <img
-                  src="/assets/images/doctor_consultation_family_1790248379120.jpg"
+                  src={CLINIC_IMAGES.doctorConsultation}
                   alt="Albert Flores"
                   className="w-full h-full object-cover"
+                  onError={(e) => handleImageError(e, 'doctorConsultation')}
                   referrerPolicy="no-referrer"
                 />
               </div>

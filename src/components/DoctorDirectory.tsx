@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Star, Clock, MapPin, CalendarCheck, ShieldCheck, ArrowRight } from 'lucide-react';
 import { DOCTORS, Doctor } from '../data/clinicData';
+import { handleImageError } from '../assets/images';
 
 interface DoctorDirectoryProps {
   onBookDoctor: (doctor: Doctor) => void;
@@ -65,6 +66,7 @@ export const DoctorDirectory: React.FC<DoctorDirectoryProps> = ({ onBookDoctor }
                   src={doc.avatar}
                   alt={doc.name}
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => handleImageError(e, 'doctorPortrait')}
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-2 py-0.5 rounded-full flex items-center gap-1 shadow-xs">

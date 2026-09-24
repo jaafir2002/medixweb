@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { PageHeader } from '../components/PageHeader';
 import { Shield, Award, Heart, Users, CheckCircle2, Clock, MapPin, Building2, Stethoscope, ArrowRight } from 'lucide-react';
 import { CLINIC_VALUES } from '../data/clinicData';
+import { CLINIC_IMAGES, handleImageError } from '../assets/images';
 
 interface AboutPageProps {
   onNavigateHome: () => void;
@@ -64,9 +65,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100 aspect-square max-w-md mx-auto">
               <img
-                src="/assets/images/about_doctor_portrait_1790248368496.jpg"
+                src={CLINIC_IMAGES.doctorPortrait}
                 alt="Lead Physician Dr. Sarah Chen"
                 className="w-full h-full object-cover"
+                onError={(e) => handleImageError(e, 'doctorPortrait')}
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
@@ -204,9 +206,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({
 
             <div className="lg:col-span-5 rounded-2xl overflow-hidden shadow-sm border border-slate-200 aspect-[4/3]">
               <img
-                src="/assets/images/care_team_scrubs_1790248388964.jpg"
+                src={CLINIC_IMAGES.careTeam}
                 alt="MedixWeb clinical medical suite"
                 className="w-full h-full object-cover"
+                onError={(e) => handleImageError(e, 'careTeam')}
                 referrerPolicy="no-referrer"
               />
             </div>

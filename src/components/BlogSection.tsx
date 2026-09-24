@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Calendar } from 'lucide-react';
 import { BLOG_POSTS, BlogPost } from '../data/clinicData';
+import { handleImageError } from '../assets/images';
 
 interface BlogSectionProps {
   onSelectPost: (post: BlogPost) => void;
@@ -46,6 +47,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onSelectPost }) => {
                   src={post.image}
                   alt={post.title}
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => handleImageError(e, 'doctorConsultation')}
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-semibold text-slate-700 shadow-xs">

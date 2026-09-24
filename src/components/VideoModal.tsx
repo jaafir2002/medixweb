@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { X, CheckCircle2, Shield, HeartPulse, Sparkles, Volume2, ArrowRight } from 'lucide-react';
+import { CLINIC_IMAGES, handleImageError } from '../assets/images';
 
 interface VideoModalProps {
   isOpen: boolean;
@@ -47,9 +48,10 @@ export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, onOpenB
         {/* Video Simulation Display */}
         <div className="relative aspect-video bg-slate-950 flex flex-col justify-end overflow-hidden group">
           <img
-            src="/assets/images/care_team_scrubs_1790248388964.jpg"
+            src={CLINIC_IMAGES.careTeam}
             alt="MedixWeb clinical faculty in scrubs during patient discussion"
             className="w-full h-full object-cover opacity-80 filter contrast-105"
+            onError={(e) => handleImageError(e, 'careTeam')}
             referrerPolicy="no-referrer"
           />
 
