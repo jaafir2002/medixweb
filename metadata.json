@@ -1,0 +1,8 @@
+{
+  "name": "Remix MedixWeb Clinic",
+  "description": "Your Trusted Partner in Modern Healthcare. Offering compassionate medical care, doctor directory, online appointment booking, and wellness insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
